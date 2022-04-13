@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+  <!--配置数据库相关-->
+  <!--数据库驱动-->
+  <property name="jdbcDriver" value="org.postgresql.Driver"/>
+  <!--数据库连接-->
+  <property name="jdbcUrl" value="jdbc:postgresql://localhost:5432/activiti_db_7.1.0_M7"/>
+  <!--数据库用户名和密码-->
+  <property name="jdbcUsername" value="postgres"/>
+  <property name="jdbcPassword" value="123456"/>
+  <!--activiti数据库表在生成时的策略-->
+  <!--true表示数据库中存在相应的表就直接使用，不存在则创建-->
+  <property name="databaseSchemaUpdate" value="true"/>
+</bean>
+</beans>
